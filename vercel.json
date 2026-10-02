@@ -1,0 +1,11 @@
+{
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "order.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/order", "methods": ["POST"], "dest": "/order.js" },
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}

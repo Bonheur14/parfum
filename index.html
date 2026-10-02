@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PARFUMÉLITE - Parfums d'exception pour homme et femme.">
+  <title>PARFUMÉLITE — L'essence de votre style</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --black:#090d10;
+      --dark:#11171b;
+      --gold:#c9a34e;
+      --gold-light:#e4c36d;
+      --cream:#faf9f6;
+      --text:#171b1e;
+      --muted:#747b80;
+      --border:#e8e8e5;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:#fff;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+    a{text-decoration:none;color:inherit}
+    .serif{font-family:Georgia, "Times New Roman", serif}
+
+    /* TOP BAR */
+    .topbar{
+      background:var(--black);
+      color:#fff;
+      font-size:12px;
+      min-height:34px;
+    }
+    .topbar .item{opacity:.92}
+    .topbar i{color:var(--gold-light);margin-right:5px}
+
+    /* NAVBAR */
+    .main-nav{
+      background:#fff;
+      border-bottom:1px solid #eee;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:235px;
+    }
+    .brand-mark{
+      width:48px;height:48px;
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      border:2px solid var(--gold);
+      color:var(--gold);
+      background:#0c1114;
+      font-size:24px;
+    }
+    .brand-name{
+      font-family:Georgia,serif;
+      font-size:20px;
+      letter-spacing:1.2px;
+      line-height:1;
+    }
+    .brand-sub{
+      display:block;
+      font-family:Arial,sans-serif;
+      font-size:8px;
+      letter-spacing:2px;
+      margin-top:5px;
+      color:#777;
+    }
+    .nav-link{
+      font-size:14px;
+      font-weight:600;
+      padding:23px 12px!important;
+      position:relative;
+    }
+    .nav-link.active,.nav-link:hover{color:var(--gold)}
+    .nav-link.active:after{
+      content:"";
+      position:absolute;
+      bottom:11px;left:12px;right:12px;
+      height:2px;background:var(--gold);
+    }
+    .search-box{
+      border:1px solid #e2e4e5;
+      border-radius:25px;
+      height:42px;
+      width:235px;
+      display:flex;
+      align-items:center;
+      padding:0 14px;
+      color:#888;
+    }
+    .search-box input{
+      border:0;outline:0;width:100%;
+      font-size:13px;
+      margin-left:8px;
+    }
+    .nav-icon{
+      font-size:21px;
+      margin-left:15px;
+      cursor:pointer;
+      position:relative;
+    }
+    .cart-count{
+      position:absolute;
+      right:-9px;top:-8px;
+      background:var(--gold);
+      color:#111;
+      border-radius:50%;
+      min-width:19px;height:19px;
+      font-size:11px;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:bold;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:430px;
+      position:relative;
+      color:#fff;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(5,8,10,.96) 0%,rgba(5,8,10,.80) 38%,rgba(5,8,10,.20) 78%),
+        url("https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1800&q=85") center/cover;
+    }
+    .hero-content{padding:80px 0 75px}
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:3px;
+      font-size:12px;
+      font-weight:bold;
+      color:#e7e7e7;
+    }
+    .hero h1{
+      font-size:55px;
+      line-height:1.02;
+      font-weight:700;
+      max-width:650px;
+      margin:13px 0 18px;
+    }
+    .gold{color:var(--gold-light)}
+    .hero p{
+      max-width:510px;
+      color:#eee;
+      line-height:1.6;
+    }
+    .btn-gold{
+      background:var(--gold-light);
+      color:#101010;
+      border:0;
+      padding:13px 24px;
+      font-weight:800;
+      text-transform:uppercase;
+      font-size:12px;
+    }
+    .btn-gold:hover{background:#f0d17c;color:#000}
+    .hero-trust{
+      position:absolute;
+      right:7%;
+      top:70px;
+      width:230px;
+    }
+    .trust-item{
+      display:flex;align-items:center;
+      gap:13px;
+      margin:17px 0;
+      font-size:12px;
+    }
+    .trust-icon{
+      width:45px;height:45px;
+      flex:0 0 45px;
+      border:1px solid var(--gold);
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--gold-light);
+      font-size:18px;
+    }
+    .carousel-dots{
+      position:absolute;bottom:18px;left:50%;
+      transform:translateX(-50%);
+    }
+    .carousel-dots span{
+      display:inline-block;width:8px;height:8px;border:1px solid #fff;border-radius:50%;margin:0 4px;
+    }
+    .carousel-dots span.active{background:#fff}
+
+    /* SECTION */
+    .section{padding:55px 0}
+    .section-title{
+      font-size:23px;
+      font-weight:800;
+      margin-bottom:28px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      gap:15px;
+    }
+    .section-title:after{
+      content:"";width:54px;height:2px;background:var(--gold);
+    }
+
+    /* CATEGORIES */
+    .cat-card{text-align:center;cursor:pointer}
+    .cat-circle{
+      width:115px;height:115px;
+      border-radius:50%;
+      background:#f6f6f4;
+      margin:auto;
+      display:flex;align-items:center;justify-content:center;
+      border:1px solid transparent;
+      transition:.25s;
+      overflow:hidden;
+    }
+    .cat-circle img{width:76px;height:76px;object-fit:contain}
+    .cat-card:hover .cat-circle{
+      border-color:var(--gold);
+      transform:translateY(-5px);
+      box-shadow:0 12px 25px rgba(0,0,0,.08);
+    }
+    .cat-title{font-size:13px;font-weight:700;margin-top:13px}
+
+    /* PRODUCTS */
+    .product-card{
+      border:1px solid var(--border);
+      border-radius:7px;
+      overflow:hidden;
+      height:100%;
+      background:#fff;
+      transition:.25s;
+    }
+    .product-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 14px 30px rgba(0,0,0,.09);
+    }
+    .product-image{
+      background:#f7f7f5;
+      height:220px;
+      position:relative;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .product-image img{
+      max-width:82%;max-height:88%;
+      object-fit:contain;
+      mix-blend-mode:multiply;
+    }
+    .discount{
+      position:absolute;top:10px;right:10px;
+      background:#0c1114;color:#fff;
+      border-radius:14px;padding:5px 8px;
+      font-size:10px;font-weight:bold;
+    }
+    .product-info{padding:14px 12px}
+    .product-name{font-weight:800;font-size:14px}
+    .brand-small{color:#777;font-size:11px;margin-top:3px}
+    .stars{color:#d39e2b;font-size:12px;margin-top:7px}
+    .price{font-size:17px;font-weight:900;margin-top:4px}
+    .old-price{
+      font-size:11px;color:#999;
+      text-decoration:line-through;
+      margin-left:5px;font-weight:normal;
+    }
+    .add-cart{
+      width:100%;border:0;
+      background:#0b1114;color:#fff;
+      padding:10px 7px;border-radius:4px;
+      font-size:11px;font-weight:bold;
+      margin-top:11px;
+      transition:.2s;
+    }
+    .add-cart:hover{background:var(--gold);color:#111}
+
+    /* BANNERS */
+    .promo{
+      border-radius:5px;
+      min-height:155px;
+      color:#fff;
+      overflow:hidden;
+      position:relative;
+      display:flex;align-items:center;
+    }
+    .promo-men{
+      background:linear-gradient(90deg,rgba(5,8,10,.92),rgba(5,8,10,.15)),
+      url("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80") center/cover;
+    }
+    .promo-women{
+      background:linear-gradient(90deg,rgba(80,31,42,.90),rgba(80,31,42,.15)),
+      url("https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=80") center/cover;
+    }
+    .promo-gift{
+      background:linear-gradient(90deg,rgba(10,12,14,.92),rgba(10,12,14,.15)),
+      url("https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=700&q=80") center/cover;
+    }
+    .promo-content{padding:25px;position:relative;z-index:2}
+    .promo h3{font-family:Georgia,serif;font-size:25px;margin-bottom:5px}
+    .promo p{font-size:12px;max-width:260px;margin-bottom:12px;color:#eee}
+    .btn-outline-light{font-size:11px;border-radius:18px;padding:7px 14px}
+
+    /* FOOTER */
+    footer{background:#080d10;color:#ddd}
+    .footer-main{padding:48px 0 30px}
+    .footer-title{color:#fff;font-weight:800;font-size:13px;margin-bottom:16px}
+    .footer-link{display:block;color:#aeb3b6;font-size:12px;margin:9px 0}
+    .footer-link:hover{color:var(--gold-light)}
+    .newsletter{
+      display:flex;border:1px solid #3a4145;border-radius:4px;overflow:hidden;
+      max-width:300px;
+    }
+    .newsletter input{flex:1;background:transparent;border:0;outline:0;color:#fff;padding:10px;font-size:11px}
+    .newsletter button{border:0;background:var(--gold);font-size:11px;font-weight:bold;padding:0 14px}
+    .social i{font-size:17px;margin-right:14px}
+    .copyright{
+      border-top:1px solid #252b2f;padding:13px 0;
+      font-size:10px;color:#858b8e;
+    }
+
+    /* CART OFFCANVAS */
+    .cart-item{
+      display:flex;gap:10px;border-bottom:1px solid #eee;padding:12px 0;
+    }
+    .cart-item img{width:65px;height:65px;object-fit:contain;background:#f7f7f5}
+    .cart-total{font-size:20px;font-weight:900}
+    .toast-container{z-index:2000}
+
+    /* RESPONSIVE */
+    @media(max-width:1199px){
+      .search-box{width:180px}
+      .hero h1{font-size:45px}
+      .hero-trust{right:3%}
+    }
+    @media(max-width:991px){
+      .brand{min-width:auto}
+      .nav-link{padding:10px 0!important}
+      .nav-link.active:after{display:none}
+      .search-box{width:100%;margin:12px 0}
+      .hero{min-height:520px}
+      .hero-trust{position:static;margin-top:30px;width:auto}
+      .trust-item{display:inline-flex;margin:5px 15px 5px 0}
+      .trust-item span{display:none}
+      .hero-content{padding-top:55px}
+    }
+    @media(max-width:575px){
+      .topbar .item:nth-child(2){display:none}
+      .hero h1{font-size:36px}
+      .hero-content{padding-top:45px}
+      .section{padding:40px 0}
+      .cat-circle{width:95px;height:95px}
+      .product-image{height:190px}
+      .brand-name{font-size:17px}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center py-2">
+        <div class="d-flex gap-4">
+          <span class="item"><i class="bi bi-truck"></i> Livraison gratuite à partir de 500 MAD</span>
+          <span class="item"><i class="bi bi-shield-check"></i> Paiement sécurisé</span>
+          <span class="item"><i class="bi bi-headset"></i> Service client 7j/7</span>
+        </div>
+        <div class="d-none d-md-flex gap-3">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-tiktok"></i>
+          <i class="bi bi-youtube"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg main-nav">
+    <div class="container">
+      <a class="brand" href="#accueil">
+        <div class="brand-mark"><i class="bi bi-gem"></i></div>
+        <div>
+          <div class="brand-name">PARFUMÉLITE</div>
+          <span class="brand-sub">L'ESSENCE DE VOTRE STYLE</span>
+        </div>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainMenu">
+        <ul class="navbar-nav mx-lg-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#accueil">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#boutique">Boutique</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">Nos Marques</a></li>
+          <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center flex-wrap">
+          <div class="search-box">
+            <i class="bi bi-search"></i>
+            <input id="searchInput" type="search" placeholder="Rechercher un parfum...">
+          </div>
+          <i class="bi bi-person nav-icon" title="Mon compte"></i>
+          <i class="bi bi-heart nav-icon" title="Favoris"></i>
+          <span class="nav-icon" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" title="Panier">
+            <i class="bi bi-bag"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="accueil">
+    <div class="container hero-content">
+      <div class="eyebrow">Des parfums d'exception</div>
+      <h1 class="serif">Trouvez le parfum<br>qui <span class="gold">vous ressemble</span></h1>
+      <p>Découvrez notre collection de parfums pour homme et femme. Des fragrances uniques pour toutes les occasions.</p>
+      <a href="#boutique" class="btn btn-gold mt-2">Voir la collection <i class="bi bi-arrow-right ms-2"></i></a>
+    </div>
+
+    <div class="container hero-trust">
+      <div class="trust-item">
+        <div class="trust-icon"><i class="bi bi-truck"></i></div>
+        <span>Livraison rapide<br>partout au Maroc</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><i class="bi bi-shield-check"></i></div>
+        <span>Produits 100% originaux<br>et garantis</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><i class="bi bi-arrow-return-left"></i></div>
+        <span>Retours sous 14 jours</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><i class="bi bi-headset"></i></div>
+        <span>Service client<br>à votre écoute</span>
+      </div>
+    </div>
+
+    <div class="carousel-dots">
+      <span class="active"></span><span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="container">
+      <h2 class="section-title">Nos catégories</h2>
+      <div class="row g-4">
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="cat-card category-filter" data-category="Homme">
+            <div class="cat-circle">
+              <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=300&q=80" alt="Parfums Homme">
+            </div>
+            <div class="cat-title">Parfums Homme</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="cat-card category-filter" data-category="Femme">
+            <div class="cat-circle">
+              <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=300&q=80" alt="Parfums Femme">
+            </div>
+            <div class="cat-title">Parfums Femme</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="cat-card category-filter" data-category="Unisexe">
+            <div class="cat-circle">
+              <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=300&q=80" alt="Parfums Unisexe">
+            </div>
+            <div class="cat-title">Parfums Unisexe</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="cat-card" onclick="showMessage('Les coffrets cadeaux arrivent bientôt !')">
+            <div class="cat-circle"><i class="bi bi-gift fs-1 text-secondary"></i></div>
+            <div class="cat-title">Coffrets Cadeaux</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="cat-card" onclick="showMessage('Découvrez bientôt nos nouveautés !')">
+            <div class="cat-circle"><i class="bi bi-stars fs-1" style="color:#c9a34e"></i></div>
+            <div class="cat-title">Nouveautés</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="cat-card" onclick="filterDiscounts()">
+            <div class="cat-circle"><i class="bi bi-fire fs-1" style="color:#d6a72d"></i></div>
+            <div class="cat-title">Promotions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section pt-0" id="boutique">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="section-title mb-0">Nos meilleures ventes</h2>
+        <button class="btn btn-sm btn-link text-dark fw-bold" onclick="resetProducts()">Voir tout <i class="bi bi-arrow-right"></i></button>
+      </div>
+
+      <div class="row g-3" id="productGrid">
+
+        <div class="col-6 col-md-4 col-lg" data-product-card data-category="Homme" data-name="Dior Sauvage">
+          <div class="product-card">
+            <div class="product-image">
+              <span class="discount">-15%</span>
+              <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=500&q=80" alt="Dior Sauvage">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Dior Sauvage</div>
+              <div class="brand-small">Dior</div>
+              <div class="stars">★★★★★ <span class="text-muted">(124)</span></div>
+              <div class="price">850 MAD <span class="old-price">1 000 MAD</span></div>
+              <button class="add-cart" onclick="addToCart('Dior Sauvage',850,'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=300&q=80')">
+                <i class="bi bi-bag-plus"></i> Ajouter au panier
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg" data-product-card data-category="Femme" data-name="YSL Libre">
+          <div class="product-card">
+            <div class="product-image">
+              <span class="discount">-10%</span>
+              <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=500&q=80" alt="YSL Libre">
+            </div>
+            <div class="product-info">
+              <div class="product-name">YSL Libre</div>
+              <div class="brand-small">Yves Saint Laurent</div>
+              <div class="stars">★★★★★ <span class="text-muted">(98)</span></div>
+              <div class="price">900 MAD <span class="old-price">1 000 MAD</span></div>
+              <button class="add-cart" onclick="addToCart('YSL Libre',900,'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=300&q=80')">
+                <i class="bi bi-bag-plus"></i> Ajouter au panier
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg" data-product-card data-category="Homme" data-name="Bleu de Chanel">
+          <div class="product-card">
+            <div class="product-image">
+              <span class="discount">-12%</span>
+              <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=500&q=80" alt="Bleu de Chanel">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Bleu de Chanel</div>
+              <div class="brand-small">Chanel</div>
+              <div class="stars">★★★★★ <span class="text-muted">(156)</span></div>
+              <div class="price">970 MAD <span class="old-price">1 100 MAD</span></div>
+              <button class="add-cart" onclick="addToCart('Bleu de Chanel',970,'https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=300&q=80')">
+                <i class="bi bi-bag-plus"></i> Ajouter au panier
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg" data-product-card data-category="Femme" data-name="Miss Dior">
+          <div class="product-card">
+            <div class="product-image">
+              <span class="discount">-8%</span>
+              <img src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=500&q=80" alt="Miss Dior">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Miss Dior</div>
+              <div class="brand-small">Dior</div>
+              <div class="stars">★★★★★ <span class="text-muted">(87)</span></div>
+              <div class="price">920 MAD <span class="old-price">1 000 MAD</span></div>
+              <button class="add-cart" onclick="addToCart('Miss Dior',920,'https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=300&q=80')">
+                <i class="bi bi-bag-plus"></i> Ajouter au panier
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg" data-product-card data-category="Homme" data-name="Terre d'Hermès">
+          <div class="product-card">
+            <div class="product-image">
+              <span class="discount">-10%</span>
+              <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=500&q=80" alt="Terre d'Hermès">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Terre d'Hermès</div>
+              <div class="brand-small">Hermès</div>
+              <div class="stars">★★★★★ <span class="text-muted">(73)</span></div>
+              <div class="price">880 MAD <span class="old-price">980 MAD</span></div>
+              <button class="add-cart" onclick="addToCart('Terre d’Hermès',880,'https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=300&q=80')">
+                <i class="bi bi-bag-plus"></i> Ajouter au panier
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="noResults" class="text-center py-5 d-none">
+        <i class="bi bi-search fs-1 text-muted"></i>
+        <p class="mt-3 text-muted">Aucun parfum ne correspond à votre recherche.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOTIONS -->
+  <section class="pb-5">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-lg-4">
+          <div class="promo promo-men">
+            <div class="promo-content">
+              <h3>Pour Lui</h3>
+              <p>Des parfums puissants et élégants.</p>
+              <a href="#boutique" class="btn btn-outline-light btn-sm rounded-pill">Découvrir <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="promo promo-women">
+            <div class="promo-content">
+              <h3>Pour Elle</h3>
+              <p>Des fragrances délicates et envoûtantes.</p>
+              <a href="#boutique" class="btn btn-outline-light btn-sm rounded-pill">Découvrir <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="promo promo-gift">
+            <div class="promo-content">
+              <h3 class="gold">Idée Cadeau</h3>
+              <p>Offrez plus qu'un parfum, offrez une émotion.</p>
+              <a href="#boutique" class="btn btn-outline-light btn-sm rounded-pill">Voir les coffrets <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section bg-light" id="apropos">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="eyebrow text-dark">Notre histoire</span>
+          <h2 class="serif display-6 fw-bold mt-2">L'élégance commence par une fragrance.</h2>
+          <p class="text-secondary lh-lg">PARFUMÉLITE vous propose une sélection de fragrances soigneusement choisies pour révéler votre personnalité. Notre objectif est de rendre l'achat de parfum simple, élégant et accessible partout au Maroc.</p>
+          <div class="row mt-4">
+            <div class="col-4"><strong class="fs-3">100%</strong><small class="d-block text-muted">Authentique</small></div>
+            <div class="col-4"><strong class="fs-3">24/7</strong><small class="d-block text-muted">Commande</small></div>
+            <div class="col-4"><strong class="fs-3">14j</strong><small class="d-block text-muted">Retour</small></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid rounded-3 shadow-sm" src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=1000&q=85" alt="Collection de parfums">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="serif display-6 fw-bold">Besoin d'aide ?</h2>
+        <p class="text-muted">Notre équipe est disponible pour vous accompagner dans votre choix.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4 text-center">
+          <i class="bi bi-whatsapp fs-2" style="color:#25d366"></i>
+          <h6 class="mt-3 fw-bold">WhatsApp</h6>
+          <p class="text-muted small">+212 7 76 49 17 42</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="bi bi-envelope fs-2" style="color:var(--gold)"></i>
+          <h6 class="mt-3 fw-bold">Email</h6>
+          <p class="text-muted small">bonheurespoir14@gmail.com</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="bi bi-geo-alt fs-2" style="color:var(--gold)"></i>
+          <h6 class="mt-3 fw-bold">Livraison</h6>
+          <p class="text-muted small">Partout au Maroc</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <a class="brand text-white" href="#accueil">
+              <div class="brand-mark"><i class="bi bi-gem"></i></div>
+              <div>
+                <div class="brand-name">PARFUMÉLITE</div>
+                <span class="brand-sub text-white-50">L'ESSENCE DE VOTRE STYLE</span>
+              </div>
+            </a>
+            <p class="text-secondary small mt-3" style="max-width:320px">Des parfums d'exception sélectionnés pour vous accompagner au quotidien.</p>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="footer-title">Informations</div>
+            <a class="footer-link" href="#apropos">À propos</a>
+            <a class="footer-link" href="#">Livraison & retours</a>
+            <a class="footer-link" href="#">Paiement sécurisé</a>
+            <a class="footer-link" href="#">FAQ</a>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="footer-title">Mon compte</div>
+            <a class="footer-link" href="#">Se connecter</a>
+            <a class="footer-link" href="#">Créer un compte</a>
+            <a class="footer-link" href="#">Mes commandes</a>
+            <a class="footer-link" href="#">Mes favoris</a>
+          </div>
+          <div class="col-lg-4">
+            <div class="footer-title">Nous suivre</div>
+            <div class="social mb-4">
+              <i class="bi bi-facebook"></i>
+              <i class="bi bi-instagram"></i>
+              <i class="bi bi-tiktok"></i>
+              <i class="bi bi-youtube"></i>
+            </div>
+            <div class="footer-title">Inscrivez-vous à notre newsletter</div>
+            <div class="newsletter">
+              <input type="email" placeholder="Votre adresse e-mail">
+              <button onclick="showMessage('Merci ! Vous êtes inscrit à la newsletter.')">S'abonner</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="container d-flex justify-content-between flex-wrap gap-2">
+        <span>© 2026 PARFUMÉLITE Bonheur Espoir. Tous droits réservés.</span>
+        <span>Mentions légales &nbsp; | &nbsp; Politique de confidentialité &nbsp; | &nbsp; CGV</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold">Mon panier</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div id="cartItems" class="flex-grow-1">
+        <div class="text-center text-muted py-5" id="emptyCart">
+          <i class="bi bi-bag fs-1"></i>
+          <p class="mt-3">Votre panier est vide.</p>
+        </div>
+      </div>
+      <div class="border-top pt-3">
+        <div class="d-flex justify-content-between mb-3">
+          <span>Total</span>
+          <span class="cart-total" id="cartTotal">0 MAD</span>
+        </div>
+        <button class="btn btn-dark w-100 py-3" onclick="checkout()">Passer la commande <i class="bi bi-arrow-right ms-2"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER CONFIRMATION -->
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="orderModalTitle">Vos coordonnées</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body">
+          <form id="orderForm">
+            <div class="mb-3">
+              <label for="customerName" class="form-label">Nom complet</label>
+              <input class="form-control" id="customerName" name="name" autocomplete="name" required maxlength="100">
+            </div>
+            <div class="mb-3">
+              <label for="customerPhone" class="form-label">Téléphone</label>
+              <input class="form-control" id="customerPhone" name="phone" type="tel" autocomplete="tel" required maxlength="30">
+            </div>
+            <div class="mb-3">
+              <label for="customerCity" class="form-label">Ville et adresse de livraison</label>
+              <textarea class="form-control" id="customerCity" name="address" rows="2" required maxlength="300"></textarea>
+            </div>
+            <div id="orderError" class="alert alert-danger d-none" role="alert"></div>
+            <button class="btn btn-dark w-100 py-2" id="submitOrder" type="submit">Valider la commande</button>
+          </form>
+          <div id="orderSuccess" class="d-none" role="status">
+            <p class="mb-0">Votre demande de commande a bien été reçue. Notre équipe vous appellera au numéro indiqué, par WhatsApp ou par appel classique, afin de confirmer et finaliser votre commande.</p>
+            <button class="btn btn-dark w-100 mt-4" type="button" data-bs-dismiss="modal">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="mainToast" class="toast" role="alert">
+      <div class="toast-body d-flex align-items-center gap-2">
+        <i class="bi bi-check-circle-fill text-success"></i>
+        <span id="toastText">Produit ajouté au panier.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ==========================
+    // PANIER
+    // ==========================
+    let cart = [];
+
+    function addToCart(name, price, image){
+      const existing = cart.find(item => item.name === name);
+      if(existing){
+        existing.quantity++;
+      }else{
+        cart.push({name, price, image, quantity:1});
+      }
+      updateCart();
+      showMessage(name + " ajouté au panier.");
+    }
+
+    function updateCart(){
+      const count = cart.reduce((sum,item)=>sum + item.quantity,0);
+      document.getElementById("cartCount").textContent = count;
+
+      const container = document.getElementById("cartItems");
+      const empty = document.getElementById("emptyCart");
+      const total = cart.reduce((sum,item)=>sum + item.price * item.quantity,0);
+
+      document.getElementById("cartTotal").textContent =
+        new Intl.NumberFormat("fr-FR").format(total) + " MAD";
+
+      if(cart.length === 0){
+        container.innerHTML = `
+          <div class="text-center text-muted py-5" id="emptyCart">
+            <i class="bi bi-bag fs-1"></i>
+            <p class="mt-3">Votre panier est vide.</p>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = cart.map((item,index)=>`
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}">
+          <div class="flex-grow-1">
+            <div class="fw-bold small">${item.name}</div>
+            <div class="text-muted small">${item.price} MAD</div>
+            <div class="d-flex align-items-center gap-2 mt-2">
+              <button class="btn btn-sm btn-outline-secondary" onclick="changeQty(${index},-1)">−</button>
+              <span class="small fw-bold">${item.quantity}</span>
+              <button class="btn btn-sm btn-outline-secondary" onclick="changeQty(${index},1)">+</button>
+              <button class="btn btn-sm text-danger ms-auto" onclick="removeFromCart(${index})">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function changeQty(index, amount){
+      cart[index].quantity += amount;
+      if(cart[index].quantity <= 0) cart.splice(index,1);
+      updateCart();
+    }
+
+    function removeFromCart(index){
+      cart.splice(index,1);
+      updateCart();
+    }
+
+    function checkout(){
+      if(cart.length === 0){
+        showMessage("Votre panier est vide.");
+        return;
+      }
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("orderModal")).show();
+    }
+
+    document.getElementById("orderForm").addEventListener("submit", async function(event){
+      event.preventDefault();
+      const submitButton = document.getElementById("submitOrder");
+      const errorBox = document.getElementById("orderError");
+      const order = {
+        customer: Object.fromEntries(new FormData(this).entries()),
+        items: cart.map(({name, quantity}) => ({name, quantity}))
+      };
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Envoi en cours...";
+      errorBox.classList.add("d-none");
+
+      try{
+        const response = await fetch("/api/order", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(order)
+        });
+        const result = await response.json();
+        if(!response.ok) throw new Error(result.error || "Impossible d'envoyer la commande.");
+
+        document.getElementById("orderForm").classList.add("d-none");
+        document.getElementById("orderSuccess").classList.remove("d-none");
+        document.getElementById("orderModalTitle").textContent = "Commande reçue";
+        cart = [];
+        updateCart();
+        bootstrap.Offcanvas.getOrCreateInstance(document.getElementById("cartCanvas")).hide();
+      }catch(error){
+        errorBox.textContent = error.message;
+        errorBox.classList.remove("d-none");
+      }finally{
+        submitButton.disabled = false;
+        submitButton.textContent = "Valider la commande";
+      }
+    });
+
+    document.getElementById("orderModal").addEventListener("hidden.bs.modal", function(){
+      document.getElementById("orderForm").reset();
+      document.getElementById("orderForm").classList.remove("d-none");
+      document.getElementById("orderSuccess").classList.add("d-none");
+      document.getElementById("orderModalTitle").textContent = "Vos coordonnées";
+      document.getElementById("orderError").classList.add("d-none");
+    });
+
+    // ==========================
+    // RECHERCHE
+    // ==========================
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("input", function(){
+      const value = this.value.toLowerCase().trim();
+      const cards = document.querySelectorAll("[data-product-card]");
+      let visible = 0;
+
+      cards.forEach(card=>{
+        const name = card.dataset.name.toLowerCase();
+        const category = card.dataset.category.toLowerCase();
+        const match = name.includes(value) || category.includes(value);
+        card.classList.toggle("d-none", !match);
+        if(match) visible++;
+      });
+
+      document.getElementById("noResults").classList.toggle("d-none", visible !== 0);
+    });
+
+    // ==========================
+    // FILTRES CATÉGORIES
+    // ==========================
+    document.querySelectorAll(".category-filter").forEach(btn=>{
+      btn.addEventListener("click", function(){
+        const category = this.dataset.category.toLowerCase();
+        const cards = document.querySelectorAll("[data-product-card]");
+        let visible = 0;
+
+        cards.forEach(card=>{
+          const match = card.dataset.category.toLowerCase() === category;
+          card.classList.toggle("d-none", !match);
+          if(match) visible++;
+        });
+
+        document.getElementById("noResults").classList.toggle("d-none", visible !== 0);
+        document.getElementById("boutique").scrollIntoView({behavior:"smooth"});
+      });
+    });
+
+    function resetProducts(){
+      searchInput.value = "";
+      document.querySelectorAll("[data-product-card]").forEach(card=>card.classList.remove("d-none"));
+      document.getElementById("noResults").classList.add("d-none");
+    }
+
+    function filterDiscounts(){
+      const cards = document.querySelectorAll("[data-product-card]");
+      cards.forEach(card=>card.classList.remove("d-none"));
+      document.getElementById("noResults").classList.add("d-none");
+      document.getElementById("boutique").scrollIntoView({behavior:"smooth"});
+      showMessage("Voici nos parfums en promotion.");
+    }
+
+    // ==========================
+    // TOAST
+    // ==========================
+    function showMessage(message){
+      document.getElementById("toastText").textContent = message;
+      const toast = bootstrap.Toast.getOrCreateInstance(document.getElementById("mainToast"), {delay:2500});
+      toast.show();
+    }
+  </script>
+</body>
+</html>
